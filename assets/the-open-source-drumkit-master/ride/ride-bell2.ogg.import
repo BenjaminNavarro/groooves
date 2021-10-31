@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ride-bell2.ogg-c5ecee791e535c54ead10141caf88ba4.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/ride/ride-bell2.ogg"
+dest_files=[ "res://.import/ride-bell2.ogg-c5ecee791e535c54ead10141caf88ba4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

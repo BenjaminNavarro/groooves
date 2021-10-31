@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/note.gd" type="Script" id=1]
+
+[node name="Note" type="ColorRect"]
+anchor_left = 0.096
+anchor_right = 0.096
+margin_left = 19.0
+margin_top = 17.0
+margin_right = 34.0
+margin_bottom = 32.0
+rect_rotation = 45.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

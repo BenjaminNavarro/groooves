@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chh12.ogg-5ad0ffff2d54a4ee49c92daa5ac7bbb9.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/hihat/closed-hihat/chh12.ogg"
+dest_files=[ "res://.import/chh12.ogg-5ad0ffff2d54a4ee49c92daa5ac7bbb9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

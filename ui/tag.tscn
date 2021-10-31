@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/tag.gd" type="Script" id=1]
+[ext_resource path="res://ui/tags/blues.theme" type="Theme" id=3]
+
+[node name="Tag" type="Label"]
+margin_right = 46.0
+margin_bottom = 24.0
+theme = ExtResource( 3 )
+text = "Blues"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

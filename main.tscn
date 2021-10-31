@@ -1,0 +1,267 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://ui/groove.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/main_ui.gd" type="Script" id=2]
+[ext_resource path="res://assets/the-open-source-drumkit-master/kick/kick12.ogg" type="AudioStream" id=3]
+[ext_resource path="res://src/audio_players.gd" type="Script" id=4]
+[ext_resource path="res://assets/the-open-source-drumkit-master/snare/snare-top17.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/the-open-source-drumkit-master/hihat/closed-hihat/chh4.ogg" type="AudioStream" id=6]
+[ext_resource path="res://src/track.gd" type="Script" id=7]
+[ext_resource path="res://src/main.gd" type="Script" id=8]
+[ext_resource path="res://ui/note.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/ui/tracks_ui.gd" type="Script" id=10]
+[ext_resource path="res://src/ui/groove_editor_ui.gd" type="Script" id=11]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VBoxContainer
+
+func _ready():
+	# Remove dummy objects
+	for obj in get_children():
+		obj.queue_free()
+"
+
+[node name="Main" type="Node"]
+script = ExtResource( 8 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+track = NodePath("../Track")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="UI/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 558.0
+size_flags_vertical = 3
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grooves" type="HBoxContainer" parent="UI/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/VBoxContainer/TabContainer/Grooves"]
+margin_right = 300.0
+margin_bottom = 522.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/ScrollContainer"]
+margin_right = 300.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 300, 0 )
+script = SubResource( 1 )
+
+[node name="Groove" parent="UI/VBoxContainer/TabContainer/Grooves/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+
+[node name="Editor" type="PanelContainer" parent="UI/VBoxContainer/TabContainer/Grooves"]
+margin_left = 304.0
+margin_right = 1016.0
+margin_bottom = 522.0
+size_flags_horizontal = 3
+script = ExtResource( 11 )
+
+[node name="GridContainer" type="GridContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 705.0
+margin_bottom = 515.0
+columns = 2
+
+[node name="Empty" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
+margin_right = 100.0
+margin_bottom = 40.0
+
+[node name="Controls" type="HBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
+margin_left = 104.0
+margin_right = 698.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Signature" type="LineEdit" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
+margin_right = 58.0
+margin_bottom = 40.0
+text = "4/4"
+align = 1
+
+[node name="Length" type="SpinBox" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
+margin_left = 62.0
+margin_right = 162.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+min_value = 1.0
+max_value = 128.0
+value = 4.0
+rounded = true
+allow_greater = true
+align = 1
+suffix = "beats"
+
+[node name="Grid" type="OptionButton" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
+margin_left = 166.0
+margin_right = 241.0
+margin_bottom = 40.0
+text = "No grid"
+items = [ "No grid", null, false, 0, null, "Bar grid", null, false, 1, null, "1/4th grid", null, false, 2, null, "1/8th grid", null, false, 3, null, "1/16th grid", null, false, 4, null, "1/32th grid", null, false, 5, null ]
+selected = 0
+
+[node name="Snap" type="CheckButton" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
+margin_left = 245.0
+margin_right = 355.0
+margin_bottom = 40.0
+text = "Snap"
+
+[node name="Labels" type="VBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
+margin_top = 44.0
+margin_right = 100.0
+margin_bottom = 128.0
+
+[node name="Kick" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_vertical = 3
+text = "Kick"
+valign = 1
+clip_text = true
+
+[node name="Snare" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
+margin_top = 44.0
+margin_right = 100.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_vertical = 3
+text = "Snare"
+valign = 1
+clip_text = true
+
+[node name="Tracks" type="VBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
+margin_left = 104.0
+margin_top = 44.0
+margin_right = 698.0
+margin_bottom = 128.0
+script = ExtResource( 10 )
+
+[node name="Control" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks"]
+margin_right = 594.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Note" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks/Control" groups=[
+"notes",
+] instance=ExtResource( 9 )]
+
+[node name="Control2" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks"]
+margin_top = 44.0
+margin_right = 594.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Track" type="CenterContainer" parent="UI/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="TopBar" type="PanelContainer" parent="UI/VBoxContainer"]
+margin_top = 562.0
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer/TopBar"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 31.0
+
+[node name="Tempo" type="SpinBox" parent="UI/VBoxContainer/TopBar/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+min_value = 20.0
+max_value = 240.0
+page = 10.0
+value = 100.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+suffix = "bpm"
+
+[node name="Transport" type="HBoxContainer" parent="UI/VBoxContainer/TopBar/HBoxContainer"]
+margin_left = 104.0
+margin_right = 1010.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Play" type="Button" parent="UI/VBoxContainer/TopBar/HBoxContainer/Transport"]
+margin_right = 299.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="UI/VBoxContainer/TopBar/HBoxContainer/Transport"]
+margin_left = 303.0
+margin_right = 602.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stop" type="Button" parent="UI/VBoxContainer/TopBar/HBoxContainer/Transport"]
+margin_left = 606.0
+margin_right = 906.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Stop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioPlayers" type="Node" parent="."]
+script = ExtResource( 4 )
+track = NodePath("../Track")
+
+[node name="KickPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 3 )
+bus = "Kick"
+
+[node name="SnarePlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 5 )
+bus = "Snare"
+
+[node name="HighHatPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 6 )
+bus = "High Hat"
+
+[node name="Track" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Timers" type="Node" parent="Track"]

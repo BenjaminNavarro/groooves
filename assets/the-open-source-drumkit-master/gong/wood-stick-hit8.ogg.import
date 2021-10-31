@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wood-stick-hit8.ogg-a1b6a3c402a41a6e67fdfff382855d34.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/gong/wood-stick-hit8.ogg"
+dest_files=[ "res://.import/wood-stick-hit8.ogg-a1b6a3c402a41a6e67fdfff382855d34.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

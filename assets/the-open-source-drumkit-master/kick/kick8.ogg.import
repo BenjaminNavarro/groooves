@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kick8.ogg-728c99951eed2b200b1cfff57c20c1df.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/kick/kick8.ogg"
+dest_files=[ "res://.import/kick8.ogg-728c99951eed2b200b1cfff57c20c1df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

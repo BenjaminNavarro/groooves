@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare-top7.ogg-c32bfb92f282d8c5852b1907240b35e8.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/snare/snare-top7.ogg"
+dest_files=[ "res://.import/snare-top7.ogg-c32bfb92f282d8c5852b1907240b35e8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

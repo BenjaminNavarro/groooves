@@ -1,0 +1,70 @@
+{
+    "name": "Basic",
+    "tags": [
+        "rock",
+        "blues"
+    ],
+    "length": 4,
+    "events": [
+        {
+            "note": "Kick",
+            "velocity": 100,
+            "position": 0
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 0
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 0.5
+        },
+        {
+            "note": "Snare",
+            "velocity": 100,
+            "position": 1
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 1
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 1.5
+        },
+        {
+            "note": "Kick",
+            "velocity": 100,
+            "position": 2
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 2
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 2.5
+        },
+        {
+            "note": "Snare",
+            "velocity": 100,
+            "position": 3
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 3
+        },
+        {
+            "note": "ClosedHighHat",
+            "velocity": 100,
+            "position": 3.5
+        }
+    ]
+}

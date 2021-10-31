@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/large-tom38.ogg-64be50327750df78c041a98b72e7dfd7.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/toms/large-tom38.ogg"
+dest_files=[ "res://.import/large-tom38.ogg-64be50327750df78c041a98b72e7dfd7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fhh5.ogg-1f2d5bea8fdac2ca8d486f25a255a4ee.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/hihat/foot-hihat/fhh5.ogg"
+dest_files=[ "res://.import/fhh5.ogg-1f2d5bea8fdac2ca8d486f25a255a4ee.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

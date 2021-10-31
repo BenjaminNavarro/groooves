@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/small-tom-under3.ogg-6abdfe92636c5e167fe9327ceccf930c.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit-master/toms/small-tom-under3.ogg"
+dest_files=[ "res://.import/small-tom-under3.ogg-6abdfe92636c5e167fe9327ceccf930c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "AudioPlayers",
+"language": "GDScript",
+"path": "res://src/audio_players.gd"
+}, {
+"base": "Control",
+"class": "GrooveEditorUI",
+"language": "GDScript",
+"path": "res://src/ui/groove_editor_ui.gd"
+}, {
+"base": "Panel",
+"class": "GrooveItemUI",
+"language": "GDScript",
+"path": "res://src/ui/groove_item_ui.gd"
+}, {
+"base": "Control",
+"class": "GrooveTracksUI",
+"language": "GDScript",
+"path": "res://src/ui/tracks_ui.gd"
+}, {
+"base": "Control",
+"class": "MainUI",
+"language": "GDScript",
+"path": "res://src/ui/main_ui.gd"
+}, {
+"base": "ColorRect",
+"class": "Note",
+"language": "GDScript",
+"path": "res://src/ui/note.gd"
+}, {
+"base": "Node",
+"class": "Track",
+"language": "GDScript",
+"path": "res://src/track.gd"
+} ]
+_global_script_class_icons={
+"AudioPlayers": "",
+"GrooveEditorUI": "",
+"GrooveItemUI": "",
+"GrooveTracksUI": "",
+"MainUI": "",
+"Note": "",
+"Track": ""
+}
+
+[application]
+
+config/name="Groooves"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.png"
+
+[global]
+
+export=false
+
+[physics]
+
+common/physics_fps=120
+common/physics_jitter_fix=0.0
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
