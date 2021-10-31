@@ -14,7 +14,6 @@ func _ready():
 		var file_name = grooves_dir.get_next()
 		while file_name != "":
 			file_name = "res://assets/grooves/" + file_name
-			print("reading from ", file_name)
 			var groove_file = File.new()
 			groove_file.open(file_name, File.READ)
 			var groove = Track.Groove.from_json(groove_file.get_as_text())
@@ -25,5 +24,4 @@ func _ready():
 
 
 func _on_groove_selection(groove: Track.Groove):
-	print("setting groove ", groove.name)
 	$Track.groove = groove

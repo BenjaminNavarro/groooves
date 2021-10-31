@@ -32,8 +32,8 @@ func add_tag(tag_name: String):
 
 func _name() -> Label:
 	return $MarginContainer/HBoxContainer/Name as Label
-	
-	
+
+
 func _tags() -> HBoxContainer:
 	return $MarginContainer/HBoxContainer/Tags as HBoxContainer
 
@@ -42,5 +42,4 @@ func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		var mouse_event = event as InputEventMouseButton
 		if mouse_event.button_index == BUTTON_LEFT and mouse_event.pressed:
-			print("goove ", groove_name, " selected")
 			emit_signal("selected")

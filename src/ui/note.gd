@@ -30,7 +30,6 @@ func _gui_input(event: InputEvent):
 		var mouse_event = event as InputEventMouseButton
 		if mouse_event.button_index == BUTTON_LEFT:
 			_selected = mouse_event.pressed
-			print("note selected: ", _selected)
 
 
 func _on_snap(state: bool):
