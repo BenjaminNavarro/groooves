@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/metal-stick-scrape1.ogg-b1221a5968281270cbcf151504b28cce.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/gong/metal-stick-scrape1.ogg"
+dest_files=[ "res://.import/metal-stick-scrape1.ogg-b1221a5968281270cbcf151504b28cce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

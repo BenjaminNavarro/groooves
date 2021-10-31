@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/medium-tom9.ogg-0eac8556a2a3377be61966c3a476cec1.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/toms/medium-tom9.ogg"
+dest_files=[ "res://.import/medium-tom9.ogg-0eac8556a2a3377be61966c3a476cec1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

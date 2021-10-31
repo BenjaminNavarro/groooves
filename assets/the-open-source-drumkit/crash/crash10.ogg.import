@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/crash10.ogg-6f784cafc08967c56b2a83fc8a533d76.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/crash/crash10.ogg"
+dest_files=[ "res://.import/crash10.ogg-6f784cafc08967c56b2a83fc8a533d76.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

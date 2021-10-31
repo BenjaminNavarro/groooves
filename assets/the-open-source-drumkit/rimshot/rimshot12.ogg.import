@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rimshot12.ogg-ec8d77b0576cd315275721c65c209472.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/rimshot/rimshot12.ogg"
+dest_files=[ "res://.import/rimshot12.ogg-ec8d77b0576cd315275721c65c209472.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

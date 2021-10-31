@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/large-tom-under10.ogg-de9460f4e2cb252884d11aa8d2d20b6e.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/toms/large-tom-under10.ogg"
+dest_files=[ "res://.import/large-tom-under10.ogg-de9460f4e2cb252884d11aa8d2d20b6e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ride-edge4.ogg-167fcdcfa1c3d863d43f2e48bdf29555.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/ride/ride-edge4.ogg"
+dest_files=[ "res://.import/ride-edge4.ogg-167fcdcfa1c3d863d43f2e48bdf29555.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

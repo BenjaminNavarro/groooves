@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare-top28.ogg-33dffe774d4db079e5243ba5a1fbe67e.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/snare/snare-top28.ogg"
+dest_files=[ "res://.import/snare-top28.ogg-33dffe774d4db079e5243ba5a1fbe67e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

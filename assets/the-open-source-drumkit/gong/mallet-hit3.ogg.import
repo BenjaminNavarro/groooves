@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mallet-hit3.ogg-d06584beed07f3f43c25689052cf45b6.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/gong/mallet-hit3.ogg"
+dest_files=[ "res://.import/mallet-hit3.ogg-d06584beed07f3f43c25689052cf45b6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

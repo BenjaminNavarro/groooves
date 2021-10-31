@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/crash-edge5.ogg-1c770e2f5a8b6a0c5c890687deb80d55.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/crash/crash-edge5.ogg"
+dest_files=[ "res://.import/crash-edge5.ogg-1c770e2f5a8b6a0c5c890687deb80d55.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

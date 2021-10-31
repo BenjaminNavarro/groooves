@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/large-tom-under-alt28.ogg-c810b3da7074dcc37a590486d4db329c.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/toms/large-tom-under-alt28.ogg"
+dest_files=[ "res://.import/large-tom-under-alt28.ogg-c810b3da7074dcc37a590486d4db329c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

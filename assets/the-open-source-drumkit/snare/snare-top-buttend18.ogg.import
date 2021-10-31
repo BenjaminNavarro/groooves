@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare-top-buttend18.ogg-64eaa8c3c5253b3fdfd9beb5be802c67.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/snare/snare-top-buttend18.ogg"
+dest_files=[ "res://.import/snare-top-buttend18.ogg-64eaa8c3c5253b3fdfd9beb5be802c67.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

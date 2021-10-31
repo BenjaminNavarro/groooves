@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hohh37.ogg-89dc060293308060d89e59be5bb60512.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/hihat/half-open-hihat/hohh37.ogg"
+dest_files=[ "res://.import/hohh37.ogg-89dc060293308060d89e59be5bb60512.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

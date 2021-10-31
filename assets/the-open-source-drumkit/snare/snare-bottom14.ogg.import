@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare-bottom14.ogg-b4d8d9103843ab50f3b3ccb7a5b39003.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/snare/snare-bottom14.ogg"
+dest_files=[ "res://.import/snare-bottom14.ogg-b4d8d9103843ab50f3b3ccb7a5b39003.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

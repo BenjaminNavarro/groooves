@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ride-mid-out7.ogg-39e9a43027c8e699b4710975b25e13a9.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/ride/ride-mid-out7.ogg"
+dest_files=[ "res://.import/ride-mid-out7.ogg-39e9a43027c8e699b4710975b25e13a9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

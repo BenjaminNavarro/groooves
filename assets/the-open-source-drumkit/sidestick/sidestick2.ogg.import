@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sidestick2.ogg-42833b127dd299fae4a47a434804684e.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/sidestick/sidestick2.ogg"
+dest_files=[ "res://.import/sidestick2.ogg-42833b127dd299fae4a47a434804684e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

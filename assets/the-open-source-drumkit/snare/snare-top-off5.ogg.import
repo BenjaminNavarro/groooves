@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snare-top-off5.ogg-12fa88be87525f378edb2736a982c026.oggstr"
+
+[deps]
+
+source_file="res://assets/the-open-source-drumkit/snare/snare-top-off5.ogg"
+dest_files=[ "res://.import/snare-top-off5.ogg-12fa88be87525f378edb2736a982c026.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
