@@ -18,11 +18,13 @@ func _process(_delta: float):
 			get_parent().rect_global_position.x + get_parent().rect_size.x)
 		if _snap:
 			var closest := 1000000.0
+			var new_position := rect_position.x
 			for snap_loc in _tracks.snap_locations:
 				var dist := abs(rect_position.x - snap_loc)
 				if dist < closest:
-					rect_position.x = snap_loc
+					new_position = snap_loc
 					closest = dist
+			rect_position.x = new_position
 
 
 func _gui_input(event: InputEvent):
