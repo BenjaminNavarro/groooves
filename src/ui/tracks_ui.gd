@@ -8,15 +8,16 @@ export(float) var sub_line_width := 1.0
 
 var snap_locations := Array()
 
-onready var _editor := get_parent().get_parent()
+onready var editor := get_parent().get_parent()
 
 var _dirty := false
 
+
 func _ready():
 	# warning-ignore:return_value_discarded
-	_editor.connect("div_per_beat_changed", self, "set_dirty")
+	editor.connect("div_per_beat_changed", self, "set_dirty")
 	# warning-ignore:return_value_discarded
-	_editor.connect("length_changed", self, "set_dirty")
+	editor.connect("length_changed", self, "set_dirty")
 
 
 func _process(_delta):
@@ -25,9 +26,10 @@ func _process(_delta):
 		update()
 		_dirty = false
 
+
 func _draw():
-	var beats = _editor.length * _editor.div_per_beat
-	_draw_grid(beats, _editor.div_per_beat)
+	var beats = editor.length * editor.div_per_beat
+	_draw_grid(beats, editor.div_per_beat)
 
 
 func _draw_grid(beats: int, div_per_beat: int):
@@ -43,6 +45,7 @@ func _draw_grid(beats: int, div_per_beat: int):
 		else:
 			draw_line(from, to, sub_line_color, sub_line_width)
 		snap_locations.push_back(x_pos)
+
 
 func set_dirty(_dummy):
 	_dirty = true

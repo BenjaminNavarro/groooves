@@ -1,30 +1,31 @@
 extends ColorRect
-class_name Note
+class_name NoteUI
 
-onready var _tracks := get_parent().get_parent() 
+var snap := false
+
+onready var _tracks := get_parent().get_parent()
 var _selected := false
-var _snap := false
 
 
-func _ready():
+func set_note_position(pos: float):
+	rect_position.x = pos
 	rect_global_position.y = get_parent().rect_global_position.y + (get_parent().rect_size.y - rect_size.y) / 2
+	_snap_if()
+
+
+func set_note_global_position(pos: float):
+	rect_global_position.x = pos
+	rect_global_position.y = get_parent().rect_global_position.y + (get_parent().rect_size.y - rect_size.y) / 2
+	_snap_if()
 
 
 func _process(_delta: float):
 	if _selected:
 		rect_global_position.x = clamp(
-			get_global_mouse_position().x, 
-			get_parent().rect_global_position.x, 
+			get_global_mouse_position().x,
+			get_parent().rect_global_position.x,
 			get_parent().rect_global_position.x + get_parent().rect_size.x)
-		if _snap:
-			var closest := 1000000.0
-			var new_position := rect_position.x
-			for snap_loc in _tracks.snap_locations:
-				var dist := abs(rect_position.x - snap_loc)
-				if dist < closest:
-					new_position = snap_loc
-					closest = dist
-			rect_position.x = new_position
+		_snap_if()
 
 
 func _gui_input(event: InputEvent):
@@ -34,5 +35,17 @@ func _gui_input(event: InputEvent):
 			_selected = mouse_event.pressed
 
 
+func _snap_if():
+	if snap:
+		var closest := 1000000.0
+		var new_position := rect_position.x
+		for snap_loc in _tracks.snap_locations:
+			var dist := abs(rect_position.x - snap_loc)
+			if dist < closest:
+				new_position = snap_loc
+				closest = dist
+		rect_position.x = new_position
+
+
 func _on_snap_changed(state: bool):
-	_snap = state
+	snap = state

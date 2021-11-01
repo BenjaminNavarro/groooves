@@ -19,10 +19,6 @@ var div_per_beat := 4
 var snap := false
 
 func _ready():
-	var notes = get_tree().get_nodes_in_group("notes")
-	for note in notes:
-		# warning-ignore:return_value_discarded
-		self.connect("snap_changed", note, "_on_snap_changed")
 	# warning-ignore:return_value_discarded
 	_signature.connect("text_changed", self, "_on_signature_changed")
 	# warning-ignore:return_value_discarded
@@ -69,9 +65,9 @@ func _on_grid_changed(idx: int):
 
 
 func _on_snap_changed(state: bool):
+	emit_signal("snap_changed", state)
 	if snap != state:
 		snap = state
-		emit_signal("snap_changed", snap)
 
 
 func _pow2(power: int) -> int:

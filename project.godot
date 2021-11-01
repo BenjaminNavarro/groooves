@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://src/ui/groove_item_ui.gd"
 }, {
 "base": "Control",
+"class": "GrooveTrackUI",
+"language": "GDScript",
+"path": "res://src/ui/groove_track_ui.gd"
+}, {
+"base": "Control",
 "class": "GrooveTracksUI",
 "language": "GDScript",
 "path": "res://src/ui/tracks_ui.gd"
@@ -35,7 +40,7 @@ _global_script_classes=[ {
 "path": "res://src/ui/main_ui.gd"
 }, {
 "base": "ColorRect",
-"class": "Note",
+"class": "NoteUI",
 "language": "GDScript",
 "path": "res://src/ui/note.gd"
 }, {
@@ -48,9 +53,10 @@ _global_script_class_icons={
 "AudioPlayers": "",
 "GrooveEditorUI": "",
 "GrooveItemUI": "",
+"GrooveTrackUI": "",
 "GrooveTracksUI": "",
 "MainUI": "",
-"Note": "",
+"NoteUI": "",
 "Track": ""
 }
 
