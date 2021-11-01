@@ -34,5 +34,5 @@ func _gui_input(event: InputEvent):
 			_selected = mouse_event.pressed
 
 
-func _on_snap(state: bool):
+func _on_snap_changed(state: bool):
 	_snap = state

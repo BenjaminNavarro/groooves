@@ -116,15 +116,15 @@ suffix = "beats"
 
 [node name="Grid" type="OptionButton" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
 margin_left = 166.0
-margin_right = 241.0
+margin_right = 257.0
 margin_bottom = 40.0
-text = "No grid"
+text = "1/4th grid"
 items = [ "No grid", null, false, 0, null, "Bar grid", null, false, 1, null, "1/4th grid", null, false, 2, null, "1/8th grid", null, false, 3, null, "1/16th grid", null, false, 4, null, "1/32th grid", null, false, 5, null ]
-selected = 0
+selected = 2
 
 [node name="Snap" type="CheckButton" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Controls"]
-margin_left = 245.0
-margin_right = 355.0
+margin_left = 261.0
+margin_right = 371.0
 margin_bottom = 40.0
 text = "Snap"
 
@@ -158,6 +158,7 @@ margin_top = 44.0
 margin_right = 698.0
 margin_bottom = 128.0
 script = ExtResource( 10 )
+sub_line_color = Color( 0.4, 0.4, 0.4, 1 )
 
 [node name="Control" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks"]
 margin_right = 594.0

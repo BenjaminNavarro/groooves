@@ -19,6 +19,7 @@ func _ready():
 			var groove = Track.Groove.from_json(groove_file.get_as_text())
 			_grooves.push_back(groove)
 			var groove_ui := ui.add_groove(groove) as GrooveItemUI
+			# warning-ignore:return_value_discarded
 			groove_ui.connect("selected", self, "_on_groove_selection", [groove])
 			file_name = grooves_dir.get_next()
 
