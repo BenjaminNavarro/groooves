@@ -9,4 +9,5 @@ onready var _snap := $GridContainer/Controls/Snap
 func _ready():
 	var notes = get_tree().get_nodes_in_group("notes")
 	for note in notes:
-		_snap.connect("toggled", note, "_on_snap")
+		# warning-ignore:return_value_discarded
+		self.connect("snap_changed", note, "_on_snap_changed")

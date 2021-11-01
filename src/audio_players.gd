@@ -4,13 +4,14 @@ class_name AudioPlayers
 export var track: NodePath
 
 var _track: Track
-onready var _kick := $KickPlayer 
-onready var _snare := $SnarePlayer 
-onready var _high_hat := $HighHatPlayer 
+onready var _kick := $KickPlayer
+onready var _snare := $SnarePlayer
+onready var _high_hat := $HighHatPlayer
 
 
 func _ready():
 	_track = get_node(track)
+	# warning-ignore:return_value_discarded
 	_track.connect("generate_note", self, "_on_generate_note")
 	for obj in get_children():
 		var player := obj as AudioStreamPlayer

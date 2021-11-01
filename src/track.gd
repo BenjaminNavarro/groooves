@@ -8,11 +8,14 @@ enum Note {
 }
 
 class Event:
+	# warning-ignore:shadowed_variable
+	# warning-ignore:shadowed_variable
+	# warning-ignore:shadowed_variable
 	func _init(note: int, velocity: float, position: float):
 		self.note = note
 		self.velocity = velocity
 		self.position = position
-		
+
 	var note: int # Track.Note
 	var velocity: float
 	var position: float # in beats
@@ -23,7 +26,7 @@ class Groove:
 		events = Array()
 		tags = Array()
 		length = 0
-	
+
 	var name: String
 	var tags: Array
 	var events: Array
@@ -74,6 +77,7 @@ func play():
 		timer.connect("timeout", timer, "stop")
 		timer.start()
 	var timer := create_timer(_beat_pos_to_sec(groove.length))
+	# warning-ignore:return_value_discarded
 	timer.connect("timeout", self, "groove_finished")
 	timer.start()
 	state = State.Playing
@@ -82,11 +86,11 @@ func play():
 func toggle_pause():
 	if not groove or state == State.Stopped:
 		return
-		
+
 	for obj in _timers.get_children():
 		var timer = obj as Timer
 		timer.paused = not timer.paused;
-		
+
 	if state == State.Playing:
 		state = State.Paused
 	else:
@@ -144,4 +148,4 @@ func _beat_pos_to_sec(pos: float):
 	if secs <= 0.0:
 		return 0.0001
 	else:
-		return secs 
+		return secs
