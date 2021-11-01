@@ -19,6 +19,18 @@ func set_note_global_position(pos: float):
 	_snap_if()
 
 
+func get_note_relative_position() -> float:
+	return rect_position.x / _tracks.get_beat_width()
+
+
+func set_note_relative_position(pos: float):
+	rect_position.x  = pos * _tracks.get_beat_width()
+
+
+func get_track_name() -> String:
+	return get_parent().name
+
+
 func _process(_delta: float):
 	if _selected:
 		rect_global_position.x = clamp(

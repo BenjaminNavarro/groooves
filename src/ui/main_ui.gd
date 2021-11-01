@@ -2,6 +2,7 @@ extends Control
 class_name MainUI
 
 export var track: NodePath
+onready var groove_editor = $VBoxContainer/TabContainer/Grooves/Editor
 
 onready var _tempo_spinbox = $VBoxContainer/TopBar/HBoxContainer/Tempo
 onready var _play_button = $VBoxContainer/TopBar/HBoxContainer/Transport/Play

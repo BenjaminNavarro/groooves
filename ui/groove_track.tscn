@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/groove_track_ui.gd" type="Script" id=1]
+
+[node name="Kick" type="Control"]
+margin_right = 594.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+script = ExtResource( 1 )

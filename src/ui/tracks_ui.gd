@@ -22,20 +22,24 @@ func _ready():
 
 func _process(_delta):
 	if _dirty:
-		print("calling update")
 		update()
 		_dirty = false
 
 
 func _draw():
-	var beats = editor.length * editor.div_per_beat
-	_draw_grid(beats, editor.div_per_beat)
+	var divs = editor.length * editor.div_per_beat
+	_draw_grid(divs, editor.div_per_beat)
 
 
-func _draw_grid(beats: int, div_per_beat: int):
+func add_note(event: Track.Event):
+	var track_name: String = Track.Note.keys()[event.note]
+	get_node(track_name).add_note(event)
+
+
+func _draw_grid(divs: int, div_per_beat: int):
 	snap_locations.clear()
-	for i in range(beats):
-		var x_pos = i * (rect_size.x / beats)
+	for i in range(divs):
+		var x_pos = i * (rect_size.x / divs)
 		var y_start = 0
 		var y_end = rect_size.y
 		var from := Vector2(x_pos, y_start)
@@ -49,3 +53,8 @@ func _draw_grid(beats: int, div_per_beat: int):
 
 func set_dirty(_dummy):
 	_dirty = true
+
+
+func get_beat_width() -> float:
+	return rect_size.x / editor.length
+

@@ -8,9 +8,9 @@
 [ext_resource path="res://assets/the-open-source-drumkit/hihat/closed-hihat/chh4.ogg" type="AudioStream" id=6]
 [ext_resource path="res://src/track.gd" type="Script" id=7]
 [ext_resource path="res://src/main.gd" type="Script" id=8]
+[ext_resource path="res://ui/groove_track.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/ui/tracks_ui.gd" type="Script" id=10]
 [ext_resource path="res://src/ui/groove_editor_ui.gd" type="Script" id=11]
-[ext_resource path="res://src/ui/groove_track_ui.gd" type="Script" id=12]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends VBoxContainer
@@ -86,11 +86,12 @@ margin_bottom = 515.0
 columns = 2
 
 [node name="Empty" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 120, 0 )
 
 [node name="Controls" type="HBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
-margin_left = 104.0
+margin_left = 124.0
 margin_right = 698.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
@@ -130,21 +131,21 @@ text = "Snap"
 
 [node name="Labels" type="VBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
 margin_top = 44.0
-margin_right = 100.0
-margin_bottom = 128.0
+margin_right = 120.0
+margin_bottom = 172.0
 
-[node name="Kick" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
-margin_right = 100.0
+[node name="Closed High Hat" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
+margin_right = 120.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
 size_flags_vertical = 3
-text = "Kick"
+text = "Closed High Hat"
 valign = 1
 clip_text = true
 
 [node name="Snare" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
 margin_top = 44.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 100, 40 )
 size_flags_vertical = 3
@@ -152,25 +153,36 @@ text = "Snare"
 valign = 1
 clip_text = true
 
+[node name="Kick" type="Label" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Labels"]
+margin_top = 88.0
+margin_right = 120.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_vertical = 3
+text = "Kick"
+valign = 1
+clip_text = true
+
 [node name="Tracks" type="VBoxContainer" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer"]
-margin_left = 104.0
+margin_left = 124.0
 margin_top = 44.0
 margin_right = 698.0
-margin_bottom = 128.0
+margin_bottom = 172.0
 script = ExtResource( 10 )
 sub_line_color = Color( 0.4, 0.4, 0.4, 1 )
 
-[node name="Control" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks"]
-margin_right = 594.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 40 )
-script = ExtResource( 12 )
+[node name="ClosedHighHat" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks" instance=ExtResource( 9 )]
+margin_right = 574.0
 
-[node name="Control2" type="Control" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks"]
+[node name="Snare" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks" instance=ExtResource( 9 )]
 margin_top = 44.0
-margin_right = 594.0
+margin_right = 574.0
 margin_bottom = 84.0
-rect_min_size = Vector2( 0, 40 )
+
+[node name="Kick" parent="UI/VBoxContainer/TabContainer/Grooves/Editor/GridContainer/Tracks" instance=ExtResource( 9 )]
+margin_top = 88.0
+margin_right = 574.0
+margin_bottom = 128.0
 
 [node name="Track" type="CenterContainer" parent="UI/VBoxContainer/TabContainer"]
 visible = false

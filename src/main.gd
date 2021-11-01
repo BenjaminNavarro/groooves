@@ -26,3 +26,7 @@ func _ready():
 
 func _on_groove_selection(groove: Track.Groove):
 	$Track.groove = groove
+	ui.groove_editor.clear()
+	ui.groove_editor.set_length(groove.length)
+	for note in groove.events:
+		ui.groove_editor.add_note(note)
