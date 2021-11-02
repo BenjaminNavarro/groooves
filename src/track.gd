@@ -63,8 +63,16 @@ enum State {
 
 var groove: Groove setget set_groove
 var state:int = State.Stopped setget ,get_state
+var current_position := 0.0
+var current_time := 0.0
 
 onready var _timers := $Timers
+
+func _process(delta: float):
+	if state == State.Playing:
+		current_time += delta
+		current_position = _sec_to_beat_pos(current_time)
+
 
 func play():
 	if not groove:
@@ -80,6 +88,8 @@ func play():
 	# warning-ignore:return_value_discarded
 	timer.connect("timeout", self, "groove_finished")
 	timer.start()
+	current_position = 0
+	current_time = 0
 	state = State.Playing
 
 
@@ -103,6 +113,8 @@ func stop():
 		timer.stop()
 		timer.queue_free()
 	state = State.Stopped
+	current_position = 0
+	current_time = 0
 
 
 func set_tempo(new_tempo: float):
@@ -149,3 +161,9 @@ func _beat_pos_to_sec(pos: float):
 		return 0.0001
 	else:
 		return secs
+
+
+func _sec_to_beat_pos(secs: float):
+	var beat_length := 60.0 / tempo
+	var pos := secs / beat_length
+	return pos
