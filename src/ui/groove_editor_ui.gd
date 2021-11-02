@@ -1,6 +1,7 @@
 extends Control
 class_name GrooveEditorUI
 
+signal groove_changed()
 signal signature_changed(note_value, beats_per_bar)
 signal length_changed(value)
 signal div_per_beat_changed(value)
@@ -38,6 +39,19 @@ func add_note(event: Track.Event):
 
 func clear():
 	get_tree().call_group("notes", "queue_free")
+
+
+func get_groove() -> Track.Groove:
+	var groove := Track.Groove.new()
+	groove.length = length
+	for note in get_tree().get_nodes_in_group("notes"):
+		groove.events.push_back(
+			Track.Event.new(
+				Track.Note.keys().find(note.get_track_name()), 
+				note.get_note_velocity(), 
+				note.get_note_relative_position())
+		)
+	return groove
 
 
 func _on_signature_changed(sig: String):

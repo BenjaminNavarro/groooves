@@ -20,6 +20,7 @@ func _ready():
 	_play_button.connect("pressed", _track, "play")
 	_pause_button.connect("pressed", _track, "toggle_pause")
 	_stop_button.connect("pressed", _track, "stop")
+	groove_editor.connect("groove_changed", self, "_on_groove_changed")
 
 
 func add_groove(groove: Track.Groove) -> GrooveItemUI:
@@ -28,3 +29,7 @@ func add_groove(groove: Track.Groove) -> GrooveItemUI:
 	entry.set_tags(groove.tags)
 	_groove_list.add_child(entry, true)
 	return entry
+
+
+func _on_groove_changed():
+	_track.update_groove(groove_editor.get_groove())

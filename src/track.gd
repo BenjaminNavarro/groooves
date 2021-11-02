@@ -133,6 +133,12 @@ func set_groove(new_groove: Groove):
 	play()
 
 
+func update_groove(new_groove: Groove):
+	groove.length = new_groove.length
+	groove.events = new_groove.events
+	play()
+
+
 func get_state():
 	return state
 

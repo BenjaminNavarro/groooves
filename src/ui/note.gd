@@ -2,21 +2,27 @@ extends ColorRect
 class_name NoteUI
 
 var snap := false
+var note_velocity := 100
+var skip_notification := true
+var selected := false
 
 onready var _tracks := get_parent().get_parent()
-var _selected := false
+
+
+func _ready():
+	rect_global_position.y = get_parent().rect_global_position.y + (get_parent().rect_size.y - rect_size.y) / 2
 
 
 func set_note_position(pos: float):
 	rect_position.x = pos
-	rect_global_position.y = get_parent().rect_global_position.y + (get_parent().rect_size.y - rect_size.y) / 2
 	_snap_if()
+	_signal_modification()
 
 
 func set_note_global_position(pos: float):
 	rect_global_position.x = pos
-	rect_global_position.y = get_parent().rect_global_position.y + (get_parent().rect_size.y - rect_size.y) / 2
 	_snap_if()
+	_signal_modification()
 
 
 func get_note_relative_position() -> float:
@@ -25,14 +31,19 @@ func get_note_relative_position() -> float:
 
 func set_note_relative_position(pos: float):
 	rect_position.x  = pos * _tracks.get_beat_width()
+	_signal_modification()
 
 
 func get_track_name() -> String:
 	return get_parent().name
 
 
+func get_note_velocity() -> int:
+	return note_velocity
+
+
 func _process(_delta: float):
-	if _selected:
+	if selected:
 		rect_global_position.x = clamp(
 			get_global_mouse_position().x,
 			get_parent().rect_global_position.x,
@@ -44,7 +55,9 @@ func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		var mouse_event = event as InputEventMouseButton
 		if mouse_event.button_index == BUTTON_LEFT:
-			_selected = mouse_event.pressed
+			selected = mouse_event.pressed
+			if not selected:
+				_signal_modification()
 
 
 func _snap_if():
@@ -61,3 +74,8 @@ func _snap_if():
 
 func _on_snap_changed(state: bool):
 	snap = state
+
+
+func _signal_modification():
+	if not skip_notification:
+		_tracks.editor.emit_signal("groove_changed")
