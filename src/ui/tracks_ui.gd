@@ -13,21 +13,15 @@ var snap_locations := Array()
 
 onready var editor := get_parent().get_parent()
 
-var _dirty := false
 var _audio_track: Track
+
 
 func _ready():
 	_audio_track = get_node(audio_track)
-	# warning-ignore:return_value_discarded
-	editor.connect("div_per_beat_changed", self, "set_dirty")
-	# warning-ignore:return_value_discarded
-	editor.connect("length_changed", self, "set_dirty")
 
 
 func _process(_delta):
-	if _dirty or _audio_track.state == Track.State.Playing:
-		update()
-		_dirty = false
+	update()
 
 
 func _draw():
@@ -66,10 +60,5 @@ func _draw_playhead():
 	draw_line(from, to, playhead_color, playhead_width)
 
 
-func set_dirty(_dummy):
-	_dirty = true
-
-
 func get_beat_width() -> float:
 	return rect_size.x / editor.length
-
